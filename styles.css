@@ -1,0 +1,162 @@
+/* Toggle Button */
+.xfocus-toggle {
+    position: fixed;
+    top: 5px !important;
+    right: 12px;
+    z-index: 9999;
+    background: #000;
+    border: 1px solid  !important;
+    border-color: rgb(47, 51, 54);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px;
+    padding: 8px !important;
+    width: 36px !important;
+    color: #fff;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    transition: all 0.3s ease, width 0.3s ease !important;
+}
+
+.xfocus-toggle:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5) !important;
+}
+
+.xfocus-toggle .symbol {
+    font-size: 16px;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 20px !important;
+}
+
+.xfocus-toggle .text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.xfocus-toggle.active {
+    width: auto !important;
+    padding: 8px 16px !important;
+}
+
+.xfocus-toggle.active .text {
+    opacity: 1;
+    width: auto;
+}
+
+
+/* Focus Mode Styles */
+/* Hide notifications */
+.xfocus-enabled div[data-testid="toast"],
+.xfocus-enabled div[aria-live="polite"],
+.xfocus-enabled div[role="status"],
+.xfocus-enabled div[data-testid="notificationCounter"],
+.xfocus-enabled span[data-testid="notificationBadge"] {
+    display: none !important;
+}
+
+/* Center main content */
+.xfocus-enabled main[role="main"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Ensure main content div is full width */
+.xfocus-enabled main > div:first-child {
+    width: 80% !important;
+    margin: 0 auto !important;
+}
+
+/* Adjust primary column container */
+.xfocus-enabled [data-testid="primaryColumn"] {
+    float: none !important;
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    width: 80% !important;
+    max-width: none !important;
+}
+
+.xfocus-enabled div[data-testid="cellInnerDiv"] {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.xfocus-enabled article {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Hide specific X.com elements */
+/* Left navigation menu - comprehensive selectors */
+.xfocus-enabled header[role="banner"] {
+    display: none !important;
+}
+
+.xfocus-enabled div[data-testid="sideNav"],
+.xfocus-enabled nav[role="navigation"],
+.xfocus-enabled div[data-testid="loggedOutSidebar"],
+.xfocus-enabled header div[style*="left: 0"],
+.xfocus-enabled div[style*="position: fixed"][style*="left: 0"] {
+    display: none !important;
+}
+
+/* "For you" tab - keeping working selectors */
+.xfocus-enabled [data-testid="ScrollSnap-List"],
+.xfocus-enabled [data-testid="primaryColumn"] div[role="tablist"] {
+    display: none !important;
+}
+
+/* Sidebar elements */
+.xfocus-enabled [data-testid="sidebarColumn"],
+.xfocus-enabled aside[aria-label="Timeline: Trending now"],
+.xfocus-enabled aside[aria-label="Who to follow"] {
+    display: none !important;
+}
+
+/* Messages - keeping working selector */
+.xfocus-enabled [data-testid="DMDrawer"] {
+    display: none !important;
+}
+
+/* Keep timeline content visible and properly styled */
+
+/* Keep tweet timeline visible */
+.xfocus-enabled [data-testid="primaryColumn"] [data-testid="cellInnerDiv"],
+.xfocus-enabled [data-testid="primaryColumn"] [data-testid="tweet"],
+.xfocus-enabled [data-testid="primaryColumn"] [data-testid="tweetText"] {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Override inline styles preventing full width */
+.xfocus-enabled div[class*="css-175ol2r"],
+.xfocus-enabled div[class*="r-13qz1uu"] {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Ensure parent containers don't restrict width */
+.xfocus-enabled div[class*="r-1ye8kvj"] {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Smooth transitions */
+.xfocus-enabled * {
+    transition: width 0.3s ease, margin 0.3s ease;
+}
